@@ -45,23 +45,11 @@ alias la='ls -a'
 alias ll='ls -l'
 alias grep='grep --color'
 # shortcuts
-alias zeus="ssh qnguye31@zeus.vse.gmu.edu"
 alias anyvpn='/opt/cisco/anyconnect/bin/vpn'
 alias gmuvpn-connect='anyvpn connect STUDENT'
 alias gmuvpn-disconnect='anyvpn disconnect'
 
 alias mars='cd /Users/quannguyen/Documents/GMU/SP2022/CS465/; java -jar Mars4_5.jar'
-function syllab-ec2() {
-    if [ "$1" != "" ]
-    then
-        addr="quan-nguyen@$1"
-	echo "Connecting to" $addr
-        ssh -i ~/SylLab-thingies/Quan-SylLabs.pem ${addr}
-    else
-        echo "****Error: missing ec2 public ip."
-    fi 
-}
-
 
 # Color man pages
 function man() {
