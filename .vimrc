@@ -45,18 +45,6 @@ set colorcolumn=80
 set smartindent
 set autoindent
 
-set guifont=Menlo:h14
-"let macvim_skip_colorscheme=1
-
-
-" Configuration for MacVim, aka gvimrc, or so I've heard...
-if has('gui_running')
-    " gvim specific settings here
-    colorscheme molokai
-    let g:molokai_original = 1
-    let g:rehash256 = 1
-endif
-
 
 " Autocorrect
 abbr funciton function
