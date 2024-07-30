@@ -3,9 +3,12 @@
 #promptinit
 #prompt bert
 
-# (not very) customized prompt
-export PROMPT='%F{magenta}%n%f: %B%F{033}%2~%f%b ] %# ' 
-RPROMPT=%F{yellow}%*%f
+# customized prompt
+export PROMPT='%F{magenta}%n%f:%B%F{033}%2~%f%b] %# '
+# RPROMPT='%F{yellow}%*%f %(?.✅.🚫)'✓x
+RPROMPT='%F{yellow}%*%f %(?.%F{green}✓%f.%F{red}X%f)'
+# print_status() echo $?
+# precmd_functions+=(print_status)
 
 # Keep history in ~/.zsh_history:
 HISTSIZE=10000
@@ -26,8 +29,10 @@ autoload -Uz compinit
 compinit
 source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
 # Plugins
+source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+eval "$(zoxide init zsh)"
 source <(fzf --zsh)
 
 
@@ -58,18 +63,17 @@ alias rm='rm -v'
 alias ls='ls --color'
 alias la='ls -a'
 alias ll='ls -l'
-alias grep='grep --color'
 alias glol='git log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset"'
 alias glog='git log --graph'
+alias grep='grep -i --color=auto'
+alias zcat='gzcat'
 
 # Java versions
 # export JAVA_HOME=$(/usr/libexec/java_home -v 17.0)
 # export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
-
-#LD_LIBRARY_PATH=/usr/local/opt/openssl/lib:"${LD_LIBRARY_PATH}"
-#export LD_LIBRARY_PATH
-
+# export PERL5LIB=/Users/quinn/perl5/lib/perl5:$PERL5LIB
+# export LD_LIBRARY_PATH=/usr/local/opt/openssl/lib:$LD_LIBRARY_PATH
 
 # Color man pages
 function man() {
